@@ -101,7 +101,7 @@ func (r *reporter) send() error {
 		switch metric := metric.(type) {
 		case *metrics.StandardCounter:
 			ms := metric.Snapshot()
-			pt, _ = client.NewPoint(
+			pt, _ := client.NewPoint(
 				fmt.Sprintf("%s.count", name),
 				r.tags,
 				map[string]interface{}{
